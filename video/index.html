@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidoBay - Free CC Hight Quality Video</title>
+    <meta name="description" content="Get Free Height Quality Videos Here - Grabbed From Pixaby API">
+    <meta name="keywords" content="PHOSHADE - Free Hight Quality Videos , PHOSHADE , Free Hight Quality Videos , Pixabay API">
+    <link rel="icon" href="../logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="../site.css">
+    <script src="../assets/video.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <a href="../">
+            <h1>VidoBay</h1>
+        </a>
+        <form action="../search/" method="get">
+            <input type="text" name="q" class="search" placeholder="Search nature ,Car...">
+            <button type="submit" class="searchbtn">SEARCH</button>
+        </form>
+    </header>
+    <div id="container" class="row container-fluid" style="text-align: center;">
+        <div id="vidcont" class="col-sm-9 col-md-6 col-lg-8 col-xl-10">
+            
+    <video id="my-video" class="sopplayer" controls preload="auto" data-setup="{}" width="80%">
+        <!--Use class="sopplayer" and data-setup="{}" -->
+        <source src="" type="video/mp4" />
+      </video>
+            
+        </div>
+        <div id="deteils" class="col-sm-3 col-md-6 col-lg-4 col-xl-2">
+            <ul>
+                <li>Views :- <span id="viewcount"></span></li>
+                <li>Downloads :- <span id="downcount"></span></li>
+                <li>Like :- <span id="likecount"></span></li>
+                <li>Tags :- <span id="tags"></span></li>
+                <li>id :- <span id="picid"></span></li>
+                <li>Resolution :- <span id="resolution"></span></li>
+            </ul>
+            <a href="" id="download" download>
+                <div class="btn btn-outline-success">Download</div>
+            </a>
+        </div>
+    </div>
+    <div id="reccomendation">
+        <a href="../search/?q=backgrounds">
+            <div class="categories">Backgrounds</div>
+        </a>
+    </div>
+
+    <script>
+        var textc = "";
+        var i = "";
+        var categories = ["backgrounds", "fashion", "nature", "science", "education", "feelings", "health", "people",
+            "religion", "places", "animals", "industry", "computer", "food", 'sports', 'transportation', 'travel',
+            'buildings', 'business', 'music'
+        ]
+        for (i = 0; i < categories.length; i++) {
+            textc += '<a href="../search/?q=' + categories[i] + '"><div class="categories">' + categories[i] +
+                '</div></a>';
+        }
+        document.getElementById('reccomendation').innerHTML = textc;
+    </script>
+
+</body>
+
+</html>

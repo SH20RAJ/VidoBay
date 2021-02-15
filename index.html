@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidoBay - Free CC Hight Quality Video</title>
+    <meta name="description" content="Get Free Height Quality Videos Here - Grabbed From Pixaby API">
+    <meta name="keywords" content="PHOSHADE - Free Hight Quality Videos , PHOSHADE , Free Hight Quality Videos , Pixabay API">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="load.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="../">
+            <h1>VidoBay</h1>
+        </a>
+        <form action="search/" method="get">
+            <input type="text" name="q" class="search" placeholder="Search nature ,Car...">
+            <button type="submit" class="searchbtn">SEARCH</button>
+        </form>
+    </header>
+
+    <div id="container"></div>
+
+    
+    <footer>
+        <button class="showmore" onclick="show(5)">Show 5 more</button>
+    </footer>
+    <div id="reccomendation">
+    </div>
+    
+    <script>
+        var textc ="" ;
+        var i ="";
+        var categories = ["backgrounds","fashion","nature","science", "education", "feelings", "health", "people", "religion", "places", "animals", "industry", "computer", "food", 'sports', 'transportation', 'travel', 'buildings', 'business', 'music']
+        for (i = 0; i < categories.length ; i++) {
+        textc += '<a href="search/?q='+categories[i]+'"><div class="categories">'+categories[i]+'</div></a>';
+    }
+    document.getElementById('reccomendation').innerHTML = textc ;
+    </script>
+</body>
+
+</html>

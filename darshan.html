@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h1>Darshan Raval All Songs - Love Him </h1><div id="container"></div>
+    <script>
+        document.onload = loadDocbp();
+
+        function loadDocbp() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    window.data = JSON.parse(this.responseText);
+                    console.log(window.data);
+                    setup();
+                }
+            };
+            xhttp.open("GET", 'https://in-status.github.io/FUNNY/darshan_raval.json', true);
+            xhttp.send();
+
+        }
+
+var text = "";
+        function setup() {
+            document.getElementById('container').innerHTML = "";
+            for (i = 0; i < data[2].data.length ; i++) {
+                text += '<div class="audio">'+data[2].data[i].songname+' <br><audio src="https://raw.githubusercontent.com/takemusic/Darshan-Raval/main/'+data[2].data[i].url+'?raw=true" controls></audio></div> <br><br><hr>';
+            }
+            document.getElementById('container').innerHTML = text;
+        }
+    </script>
+    <style>
+        #container {
+            text-align: center;
+            background: rgb(169, 247, 247);
+            font-size: 25px;
+            padding: 10px;
+        }
+        .audio , audio {
+            padding: 10px;
+
+        }
+    </style>
+</body>
+
+</html>
